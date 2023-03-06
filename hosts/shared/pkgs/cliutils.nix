@@ -1,0 +1,37 @@
+{pkgs, ...}:
+with pkgs; [
+  alsa-lib
+  alsa-plugins
+  alsa-tools
+  alsa-utils
+  arandr
+  brightnessctl
+  curl
+  efibootmgr
+  efitools
+  exfatprogs
+  file
+  findutils
+  gammastep
+  git
+  iw
+  ntfs3g
+  ocl-icd
+  p7zip
+  pamixer
+  patchelf
+  playerctl
+  pciutils
+  ripgrep
+  slop
+  smartmontools
+  unrar
+  unzip
+  usbutils
+  util-linux
+  vim
+  tree
+  wget
+  wirelesstools
+  zip
+]
