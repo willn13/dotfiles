@@ -10,7 +10,7 @@
   media = import ./media.nix {pkgs = pkgs;};
   pythonpackages = import ./python.nix {pkgs = pkgs;};
 in {
-  imports = [./fonts.nix];
+  imports = [./fonts.nix ];
   environment.systemPackages = with pkgs;
     [
       figlet

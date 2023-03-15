@@ -12,7 +12,7 @@ in {
     isNormalUser = true;
     shell = pkgs.zsh;
     description = "Will";
-    initialPassword = "1313";
+    initialPassword = "nixos";
     extraGroups =
       [
         "wheel"

@@ -60,19 +60,10 @@ in {
     fi
   '';
 
- #   ln -s "/etc/nixos/users/$USER/modules/desktop/windowManagers/awesome/awesome_files" "$HOME/.config/awesome"
-
-
     sessionVariables = {
       BROWSER = "firefox";
       EDITOR = "nvim";
     };
-
-  #  file = {
-   #   ".config/awesome/rc.lua".source = ./rc.lua;
-  #    ".config/awesome/themes".source = ./themes;
-  #    ".config/awesome/lain".source = inputs.lain.outPath;
-  #  };
   };
 
   imports = [

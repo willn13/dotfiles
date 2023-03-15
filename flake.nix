@@ -7,6 +7,7 @@
     nixpkgs-f2k.url = "github:fortuneteller2k/nixpkgs-f2k";
     nix-colors.url = "github:misterio77/nix-colors";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nur.url = "github:nix-community/NUR";
     helix.url = "github:SoraTenshi/helix/experimental-22.12";
     devenv.url = "github:cachix/devenv";
@@ -57,15 +58,24 @@
 
     nixosConfigurations = {
       # Laptop
-      laptop = nixpkgs.lib.nixosSystem {
+      x510 = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/laptop];
+        modules = [./hosts/x510];
+      };
+      strix = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [./hosts/strix]; 
       };
     };
 
     homeConfigurations = {
       # Laptop
-      "will@laptop" = home-manager.lib.homeManagerConfiguration {
+      "will@x510" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home/will];
+      };
+      "will@strix" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/will];

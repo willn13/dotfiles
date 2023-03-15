@@ -14,6 +14,7 @@ with pkgs; [
   findutils
   gammastep
   git
+  inxi
   iw
   ntfs3g
   ocl-icd

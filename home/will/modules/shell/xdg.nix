@@ -21,11 +21,16 @@ with lib; let
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
 
+
     "audio/*" = ["mpv.desktop"];
     "video/*" = ["mpv.dekstop"];
     "image/*" = ["imv.desktop"];
+    "image/jpeg" = ["imv.desktop"];
     "application/json" = browser;
-    "application/pdf" = ["org.pwmt.zathura.desktop.desktop"];
+    "application/pdf" = ["org.pwmt.zathura.desktop"];
+    "application/zip" = ["xarchiver.desktop"];
+    "application/rar" = ["xarchiver.desktop"];
+    "application/x-7z-compressed" = ["xarchiver.desktop"];
     "x-scheme-handler/discord" = ["discordcanary.desktop"];
     "x-scheme-handler/spotify" = ["spotify.desktop"];
     "x-scheme-handler/tg" = ["telegramdesktop.desktop"];

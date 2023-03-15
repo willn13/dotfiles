@@ -28,6 +28,10 @@
       base0CD = "7FB4CA"; # aqua/cyan
       base0DD = "7E9CD8"; # blue
       base0ED = "957FB8"; # purple/magenta
+
+      # Extra
+      base0ZA = "44475A";
+      base0ZB = "2D4F67";
     };
   };
 }

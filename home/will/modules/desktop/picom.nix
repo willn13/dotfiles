@@ -102,7 +102,7 @@
       experimental-backends = true;
 
       blur = {
-        method = "dual_kawase";
+        method = "none";
         kernel = "11x11gaussian";
         deviation = 1.0;
         strength = 10;

@@ -16,6 +16,8 @@
       wkhtmltopdf-bin
       ueberzug
       tk
+      pistol
+      
 
       # Editors
       neovim
@@ -32,12 +34,16 @@
       yt-dlp
       topgrade
       hello
+      lazygit
+      gdu
       #xss-lock
       #xautolock
 
       # Media
       smplayer
       imv
+      tauon
+      picard
 
       # Browsers
       vivaldi

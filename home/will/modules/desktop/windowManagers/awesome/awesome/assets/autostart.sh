@@ -26,5 +26,5 @@ exe variety
 
 exe fcitx5
 
-exe mullvad-vpn
+exe mullvad-gui
  
