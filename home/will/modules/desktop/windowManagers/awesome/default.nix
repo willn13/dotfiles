@@ -55,7 +55,7 @@ in {
   home = {
     activation.installAwesomeWMConfig = ''
     if [ ! -d "$HOME/.config/awesome" ]; then
-    ln -s "/home/will/.setup/home/will/modules/desktop/windowManagers/awesome/awesome" "$HOME/.config/awesome"
+    ln -s "etc/nixos/home/will/modules/desktop/windowManagers/awesome/awesome" "$HOME/.config/awesome"
     chmod -R +w "$HOME/.config/awesome"
     fi
   '';
