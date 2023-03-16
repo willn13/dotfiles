@@ -121,7 +121,7 @@
   location.provider = "geoclue2";
 
   networking = {
-    hostName = "x510";
+    hostName = "x510ur";
     networkmanager.enable = true;
     useDHCP = false;
   };
