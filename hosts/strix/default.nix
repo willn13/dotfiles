@@ -63,7 +63,7 @@
         gfxmodeEfi = "1920x1080";
         theme = pkgs.fetchzip {
           url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/asus.tar";
-          hash = "sha256-8YjpOa8a49BANzrQSgb3Qsm6jHTqZfDSxvbsaDzy8VA=";
+          hash = "sha256-DknRio6KS2Bl5oOHfuFxQimKeybT8Uur7V3abnyMCJE=";
           stripRoot = false;
         };
       };
