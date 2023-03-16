@@ -134,7 +134,6 @@
       layout = "us";
       xkbVariant = "alt-intl";
       videoDrivers = ["nvidia"];
-      asusd.enable = true;
       displayManager = {
         autoLogin = {
           enable = false;
