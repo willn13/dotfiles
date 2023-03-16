@@ -58,9 +58,9 @@
 
     nixosConfigurations = {
       # Laptop
-      x510ur = nixpkgs.lib.nixosSystem {
+      x510u = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/x510ur];
+        modules = [./hosts/x510u];
       };
       strix = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
@@ -70,7 +70,7 @@
 
     homeConfigurations = {
       # Laptop
-      "will@x510ur" = home-manager.lib.homeManagerConfiguration {
+      "will@x510u" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [./home/will];
