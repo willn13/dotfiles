@@ -8,7 +8,6 @@
       (pkgs)
 
       # Python
-      poetry
       black
 
       # Nodejs
@@ -41,7 +40,6 @@
       (pkgs.luaPackages)
       lua
       ;
-
 
     pylsp = pkgs.python310.withPackages (p:
       with p; [

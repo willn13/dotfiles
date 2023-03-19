@@ -26,6 +26,7 @@
 
     picom = inputs.nixpkgs-f2k.packages.${prev.system}.picom-git;
     vaapiIntel = prev.vaapiIntel.override {enableHybridCodec = true;};
+
   };
 in {
   default = final: prev: (additions final prev) // (modifications final prev);

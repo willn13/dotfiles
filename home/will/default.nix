@@ -9,6 +9,8 @@
     ./home.nix
     ./packages.nix
     ./programming.nix
+    ./devenv.nix
+
 
     # Visuals
     ./modules/desktop/gtk.nix
@@ -16,7 +18,7 @@
 
     # Shell Config
     ./modules/shell
-
+    
     # Lockscreen  
     ./modules/desktop/lock.nix
 
@@ -49,10 +51,15 @@
     ./modules/programs/lf.nix
 
 
-    # Kitty
-    (import ./modules/programs/wezterm { inherit builtins; })
     # Wezterm
+    (import ./modules/programs/wezterm { inherit builtins; })
+    # Kitty
     (import ./modules/programs/kitty { inherit config pkgs; })
+
+
+    # Hyprland
+    # (import ./modules/desktop/wayland {inherit pkgs;})
+    # inputs.hyprland.homeManagerModules.default
 
 
 

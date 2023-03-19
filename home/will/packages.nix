@@ -16,7 +16,6 @@
       wkhtmltopdf-bin
       ueberzug
       tk
-      pistol
       
 
       # Editors
@@ -28,6 +27,7 @@
       btop
       nitch
       autorandr
+      xlayoutdisplay
       bottom
       jq
       rsync

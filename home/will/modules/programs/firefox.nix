@@ -23,6 +23,7 @@
           stylus
           ublock-origin
           bitwarden
+          xbrowsersync
         ];
         settings = {
           "general.smoothScroll" = true;

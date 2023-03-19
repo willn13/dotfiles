@@ -1,0 +1,24 @@
+{}: rec {
+  bg-darker = "101119";
+  bg = "12131c";
+  bg-contrast = "1b1d2a";
+  bg-lighter = "242637";
+  black = "2c2f44";
+  dimblack = "343750";
+  light-black = "3b3f5b";
+  fg = "A5B7D5";
+  white = "C1C4CB";
+  grey = "3b3f5b";
+  red = "CA7E9E";
+  orange = "FFC19F";
+  yellow = "EFD9B0";
+  magenta = "C7A5E5";
+  pink = "f9c9cb";
+  green = "8FC8A8";
+  blue = "8CACEF";
+  sapphire = "9bb6f4";
+  cyan = "91CEDF";
+  teal = "8bd5c0";
+  lavender = "a9acdb";
+  accent = lavender;
+}

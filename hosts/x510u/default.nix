@@ -200,6 +200,7 @@
 
   services.xserver.windowManager.awesome.enable = true;
 
+  # Auto mount NTFS drives
   fileSystems."/run/media/will/Secondary" =
   { device = "/dev/disk/by-label/Secondary";
     fsType = "auto";

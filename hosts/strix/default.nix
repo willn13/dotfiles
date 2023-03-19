@@ -21,8 +21,13 @@
     # Fix Flatpak fonts not displaying correctly
     ./flatpak-fonts.nix
 
-    # Steam
+    # Gaming
     ./gaming.nix
+
+
+    # Hyprland Support
+    #./hyprland.nix
+
 
     # Specific configuration
     ./hardware-configuration.nix
@@ -63,7 +68,7 @@
         gfxmodeEfi = "1920x1080";
         theme = pkgs.fetchzip {
           url = "https://raw.githubusercontent.com/AdisonCavani/distro-grub-themes/master/themes/asus.tar";
-          hash = "sha256-DknRio6KS2Bl5oOHfuFxQimKeybT8Uur7V3abnyMCJE=";
+          hash = "sha256-bYAlohcC9wn7brINiM3+uSi667TlM8aGNxbekITfCQo=";
           stripRoot = false;
         };
       };
@@ -81,10 +86,10 @@
       open = false;
       modesetting.enable = true;
 
-      powerManagement = {
-        enable = true;
+     powerManagement = {
+       enable = true;
         finegrained = true;
-      };
+     };
 
       prime = {
         amdgpuBusId = "PCI:6:0:0";
@@ -106,6 +111,7 @@
       extraPackages = with pkgs; [
         vaapiVdpau
         libvdpau-va-gl
+        nvidia-vaapi-driver
       ];
     };
   };
@@ -139,9 +145,9 @@
           enable = false;
           user = "will";
         };
-      lightdm.enable = true;
+      gdm.enable = true;
       };
-      desktopManager.xfce.enable = true;
+      desktopManager.gnome.enable = true;
     };
 
     upower.enable = true;
@@ -196,16 +202,25 @@
 
   services.xserver.windowManager.awesome.enable = true;
 
-  # fileSystems."/run/media/will/Secondary" =
-  # { device = "/dev/disk/by-label/Secondary";
-  #   fsType = "auto";
-  #   options = [ "nosuid" "nodev" "nofail" "x-gvfs-show"];
-  # };
+  # Auto mount NTFS drive
+    # fileSystems."/run/media/will/Secondary" =
+    # { device = "/dev/disk/by-label/Secondary";
+    #   fsType = "ntfs-3g";
+    #   options = [ "uid=1000" "gid=1000" "nosuid" "nodev" "nofail" "x-gvfs-show"];
+    # };
+
+
+    # Auto mount BTRFS drive
+    fileSystems."/run/media/will/Secondary" =
+  { device = "/dev/disk/by-label/Secondary";
+    fsType = "btrfs";
+    options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";
 
   # Also needed for Flatpak support
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

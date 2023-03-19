@@ -10,7 +10,9 @@
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nur.url = "github:nix-community/NUR";
     helix.url = "github:SoraTenshi/helix/experimental-22.12";
-    devenv.url = "github:cachix/devenv";
+    devenv.url = "github:cachix/devenv/latest";
+    hyprland.url = "github:hyprwm/Hyprland";
+
 
 
     home-manager = {
@@ -31,12 +33,8 @@
   
 
     # Non Flakes
-    # awesome modules
-    lain = {
-      url = "github:lcpz/lain";
-      flake = false;
+
     };
-  };
 
   outputs = {
     self,
@@ -55,6 +53,7 @@
     overlays = import ./overlays {inherit inputs outputs;};
     packages = forEachPkgs (pkgs: import ./pkgs {inherit pkgs;});
     devShells = forEachPkgs (pkgs: import ./shell.nix {inherit pkgs;});
+
 
     nixosConfigurations = {
       # Laptop

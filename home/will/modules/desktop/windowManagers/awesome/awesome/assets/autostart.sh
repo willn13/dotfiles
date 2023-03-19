@@ -7,6 +7,8 @@ function exe () {
     fi
 }
 
+exe xlayoutdisplay
+
 exe picom --config=./picom/picom.conf -b
 exe $HOME/.config/awesome/scripts/redshift.sh restore
 
@@ -15,8 +17,6 @@ xrdb merge $HOME/.Xresources
 xss-lock -- betterlockscreen -l blur &
 
 exe lxsession 
-
-exe autorandr -c
 
 exe nm-applet
 

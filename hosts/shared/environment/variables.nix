@@ -1,6 +1,6 @@
 {
   environment.variables = {
-    EDITOR = "vim";
+    EDITOR = "nvim";
     BROWSER = "firefox";
   };
 }

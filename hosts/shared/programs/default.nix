@@ -31,7 +31,7 @@
     };
 
     nm-applet.enable = true;
-    seahorse.enable = true;
+    #seahorse.enable = true;
     ssh.startAgent = true;
   };
 }
