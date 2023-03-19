@@ -22,6 +22,7 @@ with pkgs; [
   pamixer
   patchelf
   playerctl
+  plocate
   pciutils
   ripgrep
   slop
