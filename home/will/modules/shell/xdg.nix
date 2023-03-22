@@ -48,6 +48,7 @@ in {
       };
     };
 
+      
     mimeApps = {
       enable = true;
       associations.added = associations;

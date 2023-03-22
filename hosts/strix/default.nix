@@ -24,11 +24,21 @@
     # Gaming
     ./gaming.nix
 
+<<<<<<< HEAD
 
     # Hyprland Support
     #./hyprland.nix
 
 
+||||||| parent of ae614a1 (Changes)
+=======
+
+
+    # Hyprland Support
+    #./hyprland.nix
+
+
+>>>>>>> ae614a1 (Changes)
     # Specific configuration
     ./hardware-configuration.nix
 
@@ -40,11 +50,13 @@
       systemd.enable = true;
     };
 
-    kernelModules = ["acpi_call"];
+    kernelModules = [ "amd-pstate" ];
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     blacklistedKernelModules = [ "nouveau" ];
-    extraModulePackages = with config.boot.kernelPackages; [acpi_call];
+    extraModulePackages = with config.boot.kernelPackages; [];
     kernelParams = [
+      "initcall_blacklist=acpi_cpufreq_init"
+      "amd_pstate=passive"
       # "i8042.direct"
       # "i8042.dumbkbd"
       # "i915.force_probe=46a6"
@@ -82,36 +94,55 @@
       package = pkgs.bluezFull;
     };
 
-    nvidia = {
-      open = false;
-      modesetting.enable = true;
+      nvidia = {
+     #   open = false;
+        modesetting.enable = true;
 
+<<<<<<< HEAD
      powerManagement = {
        enable = true;
         finegrained = true;
      };
-
-      prime = {
-        amdgpuBusId = "PCI:6:0:0";
-        nvidiaBusId = "PCI:1:0:0";
-
-        offload = {
-          enable = true;
-          enableOffloadCmd = true;
-        };
-        reverseSync.enable = true;
+||||||| parent of ae614a1 (Changes)
+      powerManagement = {
+        enable = true;
+        finegrained = true;
       };
-      nvidiaSettings = true;
-    };
+=======
+       powerManagement = {
+         enable = true;
+         finegrained = true;
+       };
+
+       prime = {
+         amdgpuBusId = "PCI:6:0:0";
+         nvidiaBusId = "PCI:1:0:0";
+
+         offload = {
+           enable = true;
+           enableOffloadCmd = true;
+         };
+         reverseSync.enable = true;
+       };
+       nvidiaSettings = true;
+      };
+>>>>>>> ae614a1 (Changes)
 
     opengl = {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
+        libGL
+        libGLU
         vaapiVdpau
+<<<<<<< HEAD
         libvdpau-va-gl
         nvidia-vaapi-driver
+||||||| parent of ae614a1 (Changes)
+        libvdpau-va-gl
+=======
+>>>>>>> ae614a1 (Changes)
       ];
     };
   };
@@ -125,6 +156,7 @@
   };
 
   services = {
+    asusd.enable = true;
     acpid = {
     enable = true;
     # Suspend when closing laptop lid
@@ -141,13 +173,30 @@
       xkbVariant = "alt-intl";
       videoDrivers = ["nvidia"];
       displayManager = {
+        setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 2560x1440 --pos 1920x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off --output DP-1-0 --primary --mode 1920x1080 --rate 120 --pos 0x0 --rotate normal --output DP-1-1 --off --output DP-1-2 --off --output HDMI-1-0 --off";
         autoLogin = {
           enable = false;
           user = "will";
         };
+<<<<<<< HEAD
       gdm.enable = true;
+||||||| parent of ae614a1 (Changes)
+      lightdm.enable = true;
+=======
+      sddm = {
+        enable = true;
+        autoNumlock = true;
+>>>>>>> ae614a1 (Changes)
       };
+<<<<<<< HEAD
       desktopManager.gnome.enable = true;
+||||||| parent of ae614a1 (Changes)
+      desktopManager.xfce.enable = true;
+=======
+    };
+      
+      desktopManager.gnome.enable = true;
+>>>>>>> ae614a1 (Changes)
     };
 
     upower.enable = true;
@@ -167,7 +216,7 @@
     flatpak.enable = true;
 
     # Something to try later
-    # switcherooControl.enable = true;
+    switcherooControl.enable = true;
 
 
   };
@@ -178,9 +227,11 @@
       inherit
         (pkgs)
         acpi
+        asusctl
         libva
         libvdpau
         libva-utils
+        supergfxctl
         vulkan-loader
         vulkan-validation-layers
         vulkan-tools
@@ -189,13 +240,13 @@
       inherit
         (pkgs.libsForQt5)
         qtstyleplugins
+        qt5ct
         ;
     };
 
     variables = {
       # GDK_SCALE = "2";
       # GDK_DPI_SCALE = "0.5";
-#      QT_QPA_PLATFORMTHEME = "gtk2";
       CM_LAUNCHER = "rofi";
     };
   };

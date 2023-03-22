@@ -26,12 +26,19 @@ environment.systemPackages = [
 
 
   
-#environment.systemPackages = with pkgs; [
+environment.systemPackages = with pkgs; [
+  protonup-qt
+  gamescope
+  mangohud
+  gamemode
+  bottles
+  lutris
+  heroic
   # wine
-#    wineWowPackages.stable
-#     (wine.override {wineBuild = "wine64";})
-#     winetricks
-#   ];
+  #  wineWowPackages.stable
+  #   (wine.override {wineBuild = "wine64";})
+  #   winetricks
+  ];
 
 
 }

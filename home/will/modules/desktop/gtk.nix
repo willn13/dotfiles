@@ -42,16 +42,17 @@ in {
       gtk-application-prefer-dark-theme = true;
       gtk-decoration-layout = "menu:";
     };
+
   };
 
-  qt = {
-    enable = true;
-    platformTheme = "gnome";
-    style = {
-      name = "adwaita-dark";
-      package = pkgs.adwaita-qt;
-    };
-  };
+  # qt = {
+  #   enable = true;
+  #   platformTheme = "gtk";
+  #   style = {
+  #     name = "gtk2";
+  #     #package = pkgs.adwaita-qt;
+  #   };
+  # };
 
   home = {
     pointerCursor = {
@@ -68,7 +69,7 @@ in {
 
     sessionVariables = {
       # Theming Related Variables
-      # GTK_THEME = "${config.colorscheme.slug}";
+      #GTK_THEME = "${config.colorscheme.slug}";
       XCURSOR_SIZE = "${builtins.toString config.home.pointerCursor.size}";
     };
   };

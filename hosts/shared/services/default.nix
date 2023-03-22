@@ -10,6 +10,7 @@
   services = {
     blueman.enable = true;
     udisks2.enable = true;
+    chrony.enable = true;
 
     dbus = {
       enable = true;
@@ -34,6 +35,12 @@
         PermitRootLogin = lib.mkForce "no";
       };
     };
+
+    locate = {
+      enable = true;
+      locate = pkgs.plocate;
+      localuser = null;
+  };
 
     udev.packages = [pkgs.gnome.gnome-settings-daemon];
   };

@@ -7,8 +7,14 @@ function exe () {
     fi
 }
 
+<<<<<<< HEAD
 exe xlayoutdisplay
 
+||||||| parent of ae614a1 (Changes)
+=======
+
+
+>>>>>>> ae614a1 (Changes)
 exe picom --config=./picom/picom.conf -b
 exe $HOME/.config/awesome/scripts/redshift.sh restore
 

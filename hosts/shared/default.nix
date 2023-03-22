@@ -15,6 +15,8 @@
       ./programs
       ./security
       ./services
+      ./miscellaneous
+
     ]
     ++ (builtins.attrValues outputs.nixosModules);
 

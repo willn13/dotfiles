@@ -2,4 +2,4 @@
 with pkgs; [
   feh
   mpv
-]
+ ]

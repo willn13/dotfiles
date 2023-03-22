@@ -36,7 +36,7 @@
     # Btop
     ./modules/programs/btop.nix
     # Nvim Config
-    ./modules/programs/nvim
+    #./modules/programs/nvim
     # Alacritty
     ./modules/programs/alacritty.nix
     # Firefox

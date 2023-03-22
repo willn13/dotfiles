@@ -32,6 +32,8 @@ local function set_keybindings ()
         ),
         awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -show drun") end,
                   {description = "Open rofi", group = "launcher"}),
+        awful.key({ modkey, "Control" }, "l", function () awful.spawn("betterlockscreen -l dim") end,
+                  {description = "Lock Screen", group = "launcher"}),
     })
 
     -- Tags related keybindings
