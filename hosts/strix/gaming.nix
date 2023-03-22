@@ -20,11 +20,6 @@ nixpkgs.config.packageOverrides = pkgs: {
   # Enable Controllers for Games 
 hardware.steam-hardware.enable = true;
 
-environment.systemPackages = [
-    pkgs.protonup-qt
-];
-
-
   
 environment.systemPackages = with pkgs; [
   protonup-qt

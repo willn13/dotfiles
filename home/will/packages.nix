@@ -16,14 +16,7 @@
       wkhtmltopdf-bin
       ueberzug
       tk
-<<<<<<< HEAD
-      
-||||||| parent of ae614a1 (Changes)
-      pistol
-      
-=======
 
->>>>>>> ae614a1 (Changes)
 
       # Editors
       neovim

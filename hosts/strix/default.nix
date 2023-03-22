@@ -24,21 +24,12 @@
     # Gaming
     ./gaming.nix
 
-<<<<<<< HEAD
-
-    # Hyprland Support
-    #./hyprland.nix
-
-
-||||||| parent of ae614a1 (Changes)
-=======
 
 
     # Hyprland Support
     #./hyprland.nix
 
 
->>>>>>> ae614a1 (Changes)
     # Specific configuration
     ./hardware-configuration.nix
 
@@ -98,17 +89,6 @@
      #   open = false;
         modesetting.enable = true;
 
-<<<<<<< HEAD
-     powerManagement = {
-       enable = true;
-        finegrained = true;
-     };
-||||||| parent of ae614a1 (Changes)
-      powerManagement = {
-        enable = true;
-        finegrained = true;
-      };
-=======
        powerManagement = {
          enable = true;
          finegrained = true;
@@ -126,7 +106,6 @@
        };
        nvidiaSettings = true;
       };
->>>>>>> ae614a1 (Changes)
 
     opengl = {
       enable = true;
@@ -136,13 +115,6 @@
         libGL
         libGLU
         vaapiVdpau
-<<<<<<< HEAD
-        libvdpau-va-gl
-        nvidia-vaapi-driver
-||||||| parent of ae614a1 (Changes)
-        libvdpau-va-gl
-=======
->>>>>>> ae614a1 (Changes)
       ];
     };
   };
@@ -178,25 +150,13 @@
           enable = false;
           user = "will";
         };
-<<<<<<< HEAD
-      gdm.enable = true;
-||||||| parent of ae614a1 (Changes)
-      lightdm.enable = true;
-=======
       sddm = {
         enable = true;
         autoNumlock = true;
->>>>>>> ae614a1 (Changes)
       };
-<<<<<<< HEAD
-      desktopManager.gnome.enable = true;
-||||||| parent of ae614a1 (Changes)
-      desktopManager.xfce.enable = true;
-=======
     };
       
       desktopManager.gnome.enable = true;
->>>>>>> ae614a1 (Changes)
     };
 
     upower.enable = true;

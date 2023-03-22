@@ -33,20 +33,8 @@
   
 
     # Non Flakes
-<<<<<<< HEAD
-
-    };
-||||||| parent of ae614a1 (Changes)
-    # awesome modules
-    lain = {
-      url = "github:lcpz/lain";
-      flake = false;
-    };
-  };
-=======
 
   };
->>>>>>> ae614a1 (Changes)
 
   outputs = {
     self,
