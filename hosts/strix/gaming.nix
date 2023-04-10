@@ -20,19 +20,18 @@ nixpkgs.config.packageOverrides = pkgs: {
   # Enable Controllers for Games 
 hardware.steam-hardware.enable = true;
 
-  
 environment.systemPackages = with pkgs; [
   protonup-qt
   gamescope
   mangohud
   gamemode
+  steamtinkerlaunch
   bottles
   lutris
   heroic
-  # wine
-  #  wineWowPackages.stable
-  #   (wine.override {wineBuild = "wine64";})
-  #   winetricks
+  wineWowPackages.staging
+  winetricks
+
   ];
 
 

@@ -36,7 +36,7 @@
     # Btop
     ./modules/programs/btop.nix
     # Nvim Config
-    #./modules/programs/nvim
+    ./modules/programs/nvim
     # Alacritty
     ./modules/programs/alacritty.nix
     # Firefox
@@ -49,6 +49,9 @@
     ./modules/programs/zathura.nix
     # LF
     ./modules/programs/lf.nix
+    # Helix
+    ./modules/programs/helix.nix
+
 
 
     # Wezterm

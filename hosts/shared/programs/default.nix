@@ -7,6 +7,7 @@
     adb.enable = true;
     bash.promptInit = ''eval "$(${lib.getExe pkgs.starship} init bash)"'';
     dconf.enable = true;
+    zsh.enable = true;
 
     nix-ld = {
       enable = true;

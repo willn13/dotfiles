@@ -41,10 +41,10 @@
       systemd.enable = true;
     };
 
-    kernelModules = [ "amd-pstate" ];
+    kernelModules = [ "amd-pstate" "acpi_call" ];
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
     blacklistedKernelModules = [ "nouveau" ];
-    extraModulePackages = with config.boot.kernelPackages; [];
+    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
     kernelParams = [
       "initcall_blacklist=acpi_cpufreq_init"
       "amd_pstate=passive"
@@ -85,36 +85,42 @@
       package = pkgs.bluezFull;
     };
 
-      nvidia = {
-     #   open = false;
-        modesetting.enable = true;
+    cpu = {
+      amd.updateMicrocode = true;
+    };
+
+
+     nvidia = {
+       open = false;
+       modesetting.enable = true;
 
        powerManagement = {
          enable = true;
          finegrained = true;
        };
 
-       prime = {
-         amdgpuBusId = "PCI:6:0:0";
-         nvidiaBusId = "PCI:1:0:0";
+      prime = {
+        amdgpuBusId = "PCI:6:0:0";
+        nvidiaBusId = "PCI:1:0:0";
 
-         offload = {
-           enable = true;
-           enableOffloadCmd = true;
-         };
-         reverseSync.enable = true;
+       offload = {
+         enable = true;
+         enableOffloadCmd = true;
        };
-       nvidiaSettings = true;
+
+      reverseSync.enable = true;
+         
       };
+     };
 
     opengl = {
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
       extraPackages = with pkgs; [
-        libGL
-        libGLU
+        libvdpau-va-gl
         vaapiVdpau
+        nvidia-vaapi-driver
       ];
     };
   };
@@ -175,7 +181,6 @@
     # Enable Flatpak support
     flatpak.enable = true;
 
-    # Something to try later
     switcherooControl.enable = true;
 
 
@@ -188,9 +193,13 @@
         (pkgs)
         acpi
         asusctl
+        ffmpeg
+        libGL
+        libGLU
         libva
         libvdpau
         libva-utils
+        samba
         supergfxctl
         vulkan-loader
         vulkan-validation-layers
@@ -200,7 +209,6 @@
       inherit
         (pkgs.libsForQt5)
         qtstyleplugins
-        qt5ct
         ;
     };
 
@@ -212,6 +220,7 @@
   };
 
   services.xserver.windowManager.awesome.enable = true;
+
 
   # Auto mount NTFS drive
     # fileSystems."/run/media/will/Secondary" =
@@ -233,5 +242,5 @@
 
   # Also needed for Flatpak support
   xdg.portal.enable = true;
-  #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  #sxdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

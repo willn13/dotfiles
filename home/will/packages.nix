@@ -41,6 +41,7 @@
 
       # Media
       smplayer
+      celluloid
       imv
       tauon
       picard
@@ -52,7 +53,7 @@
 
       # Office
       zathura
-      libreoffice-still
+      libreoffice-fresh
       pdfarranger
       okular
 
@@ -69,17 +70,28 @@
       slack
       lf
       ArchiSteamFarm
+      notion-app-enhanced
+      obsidian
+      figma-linux
+      blender
 
 
       # Visual
       lxappearance
       variety
       betterlockscreen
+
       ;
 
+      inherit
+        (pkgs.gnome)
+        gnome-tweaks
+        ;
+
      inherit
-      (pkgs.gnomeExtensions)
-      supergfxctl-gex
-      ;
+        (pkgs.gnomeExtensions)
+        supergfxctl-gex
+        user-themes
+        ;
   };
 }
