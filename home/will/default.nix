@@ -49,8 +49,7 @@
     ./modules/programs/zathura.nix
     # LF
     ./modules/programs/lf.nix
-    # Helix
-    ./modules/programs/helix.nix
+
 
 
 

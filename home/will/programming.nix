@@ -33,6 +33,7 @@
       # Others
       R
       texlab
+      tree-sitter
 
       ;
 

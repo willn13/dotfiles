@@ -13,14 +13,12 @@
       kitty
       tmux
       zellij
-      wkhtmltopdf-bin
       ueberzug
       tk
-
+      yad
 
       # Editors
       neovim
-      sublime4
       neovide
 
       #CLI Tools

@@ -10,7 +10,6 @@
     johnnymorganz.stylua
     ms-python.black-formatter
     ms-python.python
-
   ];
 in {
   programs.vscode = {
@@ -30,6 +29,8 @@ in {
         sumneko.lua
         github.copilot
         mkhl.direnv
+        vscodevim.vim
+        angular.ng-template
       ]
       ++ marketplace-extensions;
 

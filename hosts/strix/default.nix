@@ -62,7 +62,6 @@
 
       grub = {
         enable = true;
-        version = 2;
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
@@ -223,19 +222,19 @@
 
 
   # Auto mount NTFS drive
-    # fileSystems."/run/media/will/Secondary" =
-    # { device = "/dev/disk/by-label/Secondary";
-    #   fsType = "ntfs-3g";
-    #   options = [ "uid=1000" "gid=1000" "nosuid" "nodev" "nofail" "x-gvfs-show"];
-    # };
-
-
-    # Auto mount BTRFS drive
     fileSystems."/run/media/will/Secondary" =
-  { device = "/dev/disk/by-label/Secondary";
-    fsType = "btrfs";
-    options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
-  };
+    { device = "/dev/disk/by-label/Secondary";
+      fsType = "ntfs-3g";
+      options = [ "uid=1000" "gid=1000" "nosuid" "nodev" "nofail" "x-gvfs-show"];
+    };
+
+
+  #   # Auto mount BTRFS drive
+  #   fileSystems."/run/media/will/Secondary" =
+  # { device = "/dev/disk/by-label/Secondary";
+  #   fsType = "btrfs";
+  #   options = [ "nosuid" "nodev" "nofail" "x-gvfs-show" ];
+  # };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.05";

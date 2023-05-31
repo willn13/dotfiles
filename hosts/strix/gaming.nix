@@ -25,13 +25,11 @@ environment.systemPackages = with pkgs; [
   gamescope
   mangohud
   gamemode
-  steamtinkerlaunch
   bottles
   lutris
   heroic
   wineWowPackages.staging
   winetricks
-
   ];
 
 
