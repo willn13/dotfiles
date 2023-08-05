@@ -9,7 +9,6 @@
     qufiwefefwoyn.kanagawa
     johnnymorganz.stylua
     ms-python.black-formatter
-    ms-python.python
   ];
 in {
   programs.vscode = {
@@ -22,14 +21,14 @@ in {
         bbenoist.nix
         file-icons.file-icons
         kamadorueda.alejandra
-        #ms-python.python
+        ms-python.python
         ms-python.vscode-pylance
         ms-toolsai.jupyter
         ms-toolsai.jupyter-renderers
         sumneko.lua
         github.copilot
         mkhl.direnv
-        vscodevim.vim
+        asvetliakov.vscode-neovim
         angular.ng-template
       ]
       ++ marketplace-extensions;

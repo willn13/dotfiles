@@ -123,7 +123,7 @@ in {
         {
           name = "awesome";
           start = ''
-            ${pkgs.awesome-git-luajit}/bin/awesome ${makeSearchPath luaModules} &
+            ${pkgs.awesome-luajit-git}/bin/awesome ${makeSearchPath luaModules} &
             waitPID=$!
           '';
         };
@@ -132,7 +132,7 @@ in {
     environment.systemPackages = lib.attrValues {
       inherit
         (pkgs)
-        awesome-git-luajit
+        awesome-luajit-git
         maim
         lxrandr
         nemo-qml-plugin-dbus

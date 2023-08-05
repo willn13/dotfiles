@@ -7,9 +7,7 @@
 
   # Modifies existing packages
   modifications = final: prev: {
-    awesome-git-luajit = inputs.nixpkgs-f2k.packages.${prev.system}.awesome-git.override {
-      lua = prev.luajit;
-    };
+    awesome-luajit-git = inputs.nixpkgs-f2k.packages.${prev.system}.awesome-luajit-git;
 
       ncmpcpp = prev.ncmpcpp.overrideAttrs (old: rec {
       src = prev.fetchFromGitHub {

@@ -4,13 +4,11 @@
   inputs,
   ...
 }: {
-
   imports = [
     ./home.nix
     ./packages.nix
     ./programming.nix
     ./devenv.nix
-
 
     # Visuals
     ./modules/desktop/gtk.nix
@@ -18,14 +16,12 @@
 
     # Shell Config
     ./modules/shell
-    
-    # Lockscreen  
-    ./modules/desktop/lock.nix
 
+    # Lockscreen
+    ./modules/desktop/lock.nix
 
     # Awesome WM files
     ./modules/desktop/windowManagers/awesome
-
 
     # Program Configs:
 
@@ -50,22 +46,13 @@
     # LF
     ./modules/programs/lf.nix
 
-
-
-
     # Wezterm
-    (import ./modules/programs/wezterm { inherit builtins; })
+    (import ./modules/programs/wezterm {inherit builtins;})
     # Kitty
-    (import ./modules/programs/kitty { inherit config pkgs; })
-
+    (import ./modules/programs/kitty {inherit config pkgs;})
 
     # Hyprland
     # (import ./modules/desktop/wayland {inherit pkgs;})
     # inputs.hyprland.homeManagerModules.default
-
-
-
-   
   ];
-
 }

@@ -24,15 +24,11 @@
     # Gaming
     ./gaming.nix
 
-
-
     # Hyprland Support
-    #./hyprland.nix
-
+    ./hyprland.nix
 
     # Specific configuration
     ./hardware-configuration.nix
-
   ];
 
   boot = {
@@ -41,10 +37,10 @@
       systemd.enable = true;
     };
 
-    kernelModules = [ "amd-pstate" "acpi_call" ];
+    kernelModules = ["amd-pstate" "acpi_call"];
     kernelPackages = pkgs.linuxPackages_xanmod_latest;
-    blacklistedKernelModules = [ "nouveau" ];
-    extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+    blacklistedKernelModules = ["nouveau"];
+    extraModulePackages = with config.boot.kernelPackages; [acpi_call];
     kernelParams = [
       "initcall_blacklist=acpi_cpufreq_init"
       "amd_pstate=passive"
@@ -88,29 +84,27 @@
       amd.updateMicrocode = true;
     };
 
+    nvidia = {
+      open = false;
+      modesetting.enable = true;
 
-     nvidia = {
-       open = false;
-       modesetting.enable = true;
-
-       powerManagement = {
-         enable = true;
-         finegrained = true;
-       };
+      powerManagement = {
+        enable = true;
+        finegrained = true;
+      };
 
       prime = {
         amdgpuBusId = "PCI:6:0:0";
         nvidiaBusId = "PCI:1:0:0";
 
-       offload = {
-         enable = true;
-         enableOffloadCmd = true;
-       };
+        offload = {
+          enable = true;
+          enableOffloadCmd = true;
+        };
 
-      reverseSync.enable = true;
-         
+        reverseSync.enable = true;
       };
-     };
+    };
 
     opengl = {
       enable = true;
@@ -135,14 +129,14 @@
   services = {
     asusd.enable = true;
     acpid = {
-    enable = true;
-    # Suspend when closing laptop lid
-    lidEventCommands = ''
-      systemctl suspend
-    '';
-  };
+      enable = true;
+      # Suspend when closing laptop lid
+      lidEventCommands = ''
+        systemctl suspend
+      '';
+    };
 
-  # btrfs.autoScrub.enable = true;
+    # btrfs.autoScrub.enable = true;
 
     xserver = {
       enable = true;
@@ -155,25 +149,24 @@
           enable = false;
           user = "will";
         };
-      sddm = {
-        enable = true;
-        autoNumlock = true;
+        sddm = {
+          enable = true;
+          autoNumlock = true;
+        };
       };
-    };
-      
+
       desktopManager.gnome.enable = true;
     };
 
     upower.enable = true;
 
     logind = {
+      # Another way to suspend when lid close. Doesn´t work for me for some reason
+      # lidSwitch = "suspend";
 
-     # Another way to suspend when lid close. Doesn´t work for me for some reason
-     # lidSwitch = "suspend"; 
-
-     # Power key will suspend instead of shutdown
-      extraConfig = '' 
-      HandlePowerKey = suspend 
+      # Power key will suspend instead of shutdown
+      extraConfig = ''
+        HandlePowerKey = suspend
       '';
     };
 
@@ -181,10 +174,7 @@
     flatpak.enable = true;
 
     switcherooControl.enable = true;
-
-
   };
-
 
   environment = {
     systemPackages = lib.attrValues {
@@ -220,14 +210,12 @@
 
   services.xserver.windowManager.awesome.enable = true;
 
-
   # Auto mount NTFS drive
-    fileSystems."/run/media/will/Secondary" =
-    { device = "/dev/disk/by-label/Secondary";
-      fsType = "ntfs-3g";
-      options = [ "uid=1000" "gid=1000" "nosuid" "nodev" "nofail" "x-gvfs-show"];
-    };
-
+  fileSystems."/run/media/will/Secondary" = {
+    device = "/dev/disk/by-label/Secondary";
+    fsType = "ntfs-3g";
+    options = ["uid=1000" "gid=1000" "nosuid" "nodev" "nofail" "x-gvfs-show"];
+  };
 
   #   # Auto mount BTRFS drive
   #   fileSystems."/run/media/will/Secondary" =

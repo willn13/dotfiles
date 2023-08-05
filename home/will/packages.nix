@@ -71,13 +71,14 @@
       notion-app-enhanced
       obsidian
       figma-linux
-      blender
-
+      inkscape
+      flameshot
 
       # Visual
       lxappearance
       variety
       betterlockscreen
+     
 
       ;
 
@@ -90,6 +91,11 @@
         (pkgs.gnomeExtensions)
         supergfxctl-gex
         user-themes
+        tiling-assistant
+        awesome-tiles
+        just-perfection
+        forge
+        kimpanel
         ;
   };
 }

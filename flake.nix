@@ -13,8 +13,6 @@
     devenv.url = "github:cachix/devenv/latest";
     hyprland.url = "github:hyprwm/Hyprland";
 
-
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -30,10 +28,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.rust-overlay.follows = "rust-overlay";
     };
-  
 
     # Non Flakes
-
   };
 
   outputs = {
@@ -46,14 +42,12 @@
     inherit (self) outputs;
     forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
     forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});
-
   in {
     nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/home-manager;
     overlays = import ./overlays {inherit inputs outputs;};
     packages = forEachPkgs (pkgs: import ./pkgs {inherit pkgs;});
     devShells = forEachPkgs (pkgs: import ./shell.nix {inherit pkgs;});
-
 
     nixosConfigurations = {
       # Laptop
@@ -63,7 +57,7 @@
       };
       strix = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [./hosts/strix]; 
+        modules = [./hosts/strix];
       };
     };
 
