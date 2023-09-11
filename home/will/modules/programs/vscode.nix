@@ -9,6 +9,7 @@
     qufiwefefwoyn.kanagawa
     johnnymorganz.stylua
     ms-python.black-formatter
+    cweijan.vscode-mysql-client2
   ];
 in {
   programs.vscode = {
@@ -18,7 +19,7 @@ in {
       [
         esbenp.prettier-vscode
         christian-kohler.path-intellisense
-        bbenoist.nix
+        jnoortheen.nix-ide
         file-icons.file-icons
         kamadorueda.alejandra
         ms-python.python
@@ -26,7 +27,6 @@ in {
         ms-toolsai.jupyter
         ms-toolsai.jupyter-renderers
         sumneko.lua
-        github.copilot
         mkhl.direnv
         asvetliakov.vscode-neovim
         angular.ng-template

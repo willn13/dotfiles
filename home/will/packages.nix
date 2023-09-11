@@ -20,6 +20,7 @@
       # Editors
       neovim
       neovide
+      beekeeper-studio
 
       #CLI Tools
       btop
@@ -73,6 +74,7 @@
       figma-linux
       inkscape
       flameshot
+      logseq
 
       # Visual
       lxappearance

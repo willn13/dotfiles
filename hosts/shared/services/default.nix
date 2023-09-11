@@ -56,7 +56,9 @@
 
   };
 
+
 users.extraGroups.vboxusers.members = [ "will" ];
 
 }
+
 

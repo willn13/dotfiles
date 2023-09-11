@@ -5,7 +5,7 @@
 	imports = [
 	 
 	 	./sddm-theming.nix
-
+		./postgres.nix
     ];
 
 }

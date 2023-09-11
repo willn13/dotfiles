@@ -26,7 +26,7 @@
   services = {};
 
   programs = {
-    exa.enable = true;
+    eza.enable = true;
 
     bat = {
       enable = true;

@@ -25,7 +25,7 @@
     ./gaming.nix
 
     # Hyprland Support
-    ./hyprland.nix
+     ./hypr.nix
 
     # Specific configuration
     ./hardware-configuration.nix
@@ -144,7 +144,7 @@
       xkbVariant = "alt-intl";
       videoDrivers = ["nvidia"];
       displayManager = {
-        setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 2560x1440 --pos 1920x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off --output DP-1-0 --primary --mode 1920x1080 --rate 120 --pos 0x0 --rotate normal --output DP-1-1 --off --output DP-1-2 --off --output HDMI-1-0 --off";
+        setupCommands = "${pkgs.xorg.xrandr}/bin/xrandr --output eDP-1 --mode 2560x1440 --pos 0x0 --rotate normal --output DisplayPort-1 --off --output DisplayPort-2 --off --output DisplayPort-3 --off --output DisplayPort-4 --off --output DisplayPort-5 --off --output DP-1-0 --primary --mode 1920x1080 --rate 120 --pos 2560x0 --rotate normal --output DP-1-1 --off --output DP-1-2 --off --output HDMI-1-0 --off";
         autoLogin = {
           enable = false;
           user = "will";
@@ -155,7 +155,7 @@
         };
       };
 
-      desktopManager.gnome.enable = true;
+      # desktopManager.gnome.enable = true;
     };
 
     upower.enable = true;
@@ -228,6 +228,5 @@
   system.stateVersion = "23.05";
 
   # Also needed for Flatpak support
-  xdg.portal.enable = true;
-  #sxdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
 }

@@ -12,6 +12,13 @@
     helix.url = "github:SoraTenshi/helix/experimental-22.12";
     devenv.url = "github:cachix/devenv/latest";
     hyprland.url = "github:hyprwm/Hyprland";
+    nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
+
+
+    anyrun = {
+      url = "github:Kirottu/anyrun";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -22,6 +29,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
 
     nil = {
       url = "github:oxalica/nil";
@@ -35,10 +43,11 @@
   outputs = {
     self,
     nixpkgs,
+    anyrun,
     home-manager,
     devenv,
     ...
-  } @ inputs: let
+  }@ inputs: let
     inherit (self) outputs;
     forEachSystem = nixpkgs.lib.genAttrs ["x86_64-linux" "aarch64-linux"];
     forEachPkgs = f: forEachSystem (sys: f nixpkgs.legacyPackages.${sys});

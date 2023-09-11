@@ -23,6 +23,10 @@
     # Awesome WM files
     ./modules/desktop/windowManagers/awesome
 
+    # Hyprland WM files
+    ./modules/desktop/windowManagers/hyprland
+
+
     # Program Configs:
 
     # MPD
