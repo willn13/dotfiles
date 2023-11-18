@@ -148,7 +148,7 @@
           autoNumlock = true;
         };
       };
-      desktopManager.plasma5.enable = true;
+      desktopManager.gnome.enable = true;
     };
 
     upower.enable = true;
