@@ -21,9 +21,6 @@
     # Fix Flatpak fonts not displaying correctly
     ./flatpak-fonts.nix
 
-    # Steam
-    ./gaming.nix
-
 
     # Specific configuration
     ./hardware-configuration.nix
@@ -55,7 +52,6 @@
 
       grub = {
         enable = true;
-        version = 2;
         device = "nodev";
         efiSupport = true;
         useOSProber = true;
@@ -75,7 +71,7 @@
     enableRedistributableFirmware = true;
     bluetooth = {
       enable = true;
-      package = pkgs.bluezFull;
+      package = pkgs.bluez;
     };
 
     nvidia = {
@@ -147,9 +143,12 @@
           enable = false;
           user = "will";
         };
-      lightdm.enable = true;
+        sddm = {
+          enable = true;
+          autoNumlock = true;
+        };
       };
-      desktopManager.xfce.enable = true;
+      desktopManager.plasma5.enable = true;
     };
 
     upower.enable = true;
