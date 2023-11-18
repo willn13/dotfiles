@@ -5,7 +5,7 @@
   inputs,
   outputs,
   ...
-}: 
+}:
 
 {
   home = {
@@ -39,6 +39,11 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
+      permittedInsecurePackages = [
+        # Until Sublime Text changes Openssl version
+        "openssl-1.1.1w"
+        "electron-24.8.6"
+      ];
     };
   };
 

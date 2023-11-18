@@ -32,7 +32,7 @@ local function donotif(prog)
 end
 
 local rofi = make_launcher {
-    markup = '異',
+    markup = '',
     onclick = function ()
         awful.spawn('rofi -show drun')
     end

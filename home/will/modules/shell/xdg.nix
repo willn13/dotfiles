@@ -15,25 +15,28 @@ with lib; let
     "application/xhtml+xml" = browser;
     "text/html" = browser;
     "x-scheme-handler/about" = browser;
-    "x-scheme-handler/chrome" = ["brave.desktop"];
+    "x-scheme-handler/chrome" = ["brave-browser.desktop"];
     "x-scheme-handler/ftp" = browser;
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
 
 
-    "audio/*" = ["mpv.desktop"];
-    "video/*" = ["mpv.dekstop"];
+    "audio/*" = ["tauonmb.desktop"];
+    "audio/mp3" = ["tauonmb.desktop"];
+    "video/mp4" = ["io.github.celluloid_player.Celluloid.desktop"];
     "image/*" = ["imv.desktop"];
     "image/jpeg" = ["imv.desktop"];
+    "image/png" = ["imv.desktop"];
     "application/json" = browser;
     "application/pdf" = ["org.pwmt.zathura.desktop"];
     "application/zip" = ["xarchiver.desktop"];
     "application/rar" = ["xarchiver.desktop"];
+    "application/epub+zip" = ["io.github.troyeguo.koodo-reader.desktop"];
     "application/x-7z-compressed" = ["xarchiver.desktop"];
     "x-scheme-handler/discord" = ["discordcanary.desktop"];
     "x-scheme-handler/spotify" = ["spotify.desktop"];
-    "x-scheme-handler/tg" = ["telegramdesktop.desktop"];
+    "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
   };
 in {
   home.packages = with pkgs; [xdg-utils];

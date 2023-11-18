@@ -19,5 +19,9 @@ swaybg --output '*' --mode fill --image ~/.config/wallpapers/default_wallpaper &
 # Lauch statusbar (waybar)
 ~/.config/hypr/scripts/statusbar &
 
-# Start mpd
+exec lxsession &
 exec mpd &
+exec blueman-applet &
+exec variety &
+exec mullvad-gui &
+exec nm-applet &

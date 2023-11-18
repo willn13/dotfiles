@@ -20,7 +20,7 @@
       hide-scrollbar = true;
       window-format = " [{w}]\t\t{t:0}";
       sidebar-mode = true;
-      display-run = "ﰌ Run  ﰌ ";
+      display-run = "󰜎 Run 󰜎";
       display-drun = "󱓞 Applications 󱓞";
       display-window = "  Tasks  ";
       show-match = false;

@@ -10,7 +10,7 @@ local function set_keybindings ()
         awful.key({ modkey,           }, "Return", function () awful.spawn(terminal) end,
                   {description = "open a terminal", group = "launcher"}),
         awful.key(
-            { modkey }, 'd',
+            { modkey }, 'r',
             function ()
                 awesome.emit_signal('dashboard::toggle')
             end,
@@ -30,7 +30,7 @@ local function set_keybindings ()
             end,
             { description = 'toggle the notifcenter', group = 'launcher'}
         ),
-        awful.key({ modkey, "Shift" }, "Return", function () awful.spawn("rofi -show drun") end,
+        awful.key({ modkey }, "d", function () awful.spawn("rofi -show drun") end,
                   {description = "Open rofi", group = "launcher"}),
         awful.key({ modkey, "Control" }, "l", function () awful.spawn("betterlockscreen -l dim") end,
                   {description = "Lock Screen", group = "launcher"}),

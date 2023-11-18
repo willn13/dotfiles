@@ -24,8 +24,8 @@
 
       # SQL
       sqlite
-      postgresql
-      mariadb
+      #postgresql
+      #mariadb
 
       # Rust
       cargo

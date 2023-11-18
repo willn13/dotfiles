@@ -32,7 +32,7 @@ local actions = wibox.widget {
 }
 
 local toggler = wibox.widget {
-    markup = '漣',
+    markup = '',
     font = beautiful.nerd_font .. ' 19',
     align = 'center',
     widget = wibox.widget.textbox,

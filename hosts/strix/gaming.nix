@@ -27,7 +27,6 @@ environment.systemPackages = with pkgs; [
   gamemode
   bottles
   lutris
-  heroic
   wineWowPackages.staging
   winetricks
   ];

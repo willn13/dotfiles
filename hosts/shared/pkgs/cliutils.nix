@@ -12,7 +12,6 @@ with pkgs; [
   exfatprogs
   file
   findutils
-  gammastep
   git
   inxi
   iw
@@ -35,4 +34,5 @@ with pkgs; [
   wget
   wirelesstools
   zip
+  zoxide
 ]

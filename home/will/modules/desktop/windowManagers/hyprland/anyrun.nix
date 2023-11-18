@@ -13,8 +13,7 @@
         randr
         rink
         shell
-        symbols
-        translate
+        stdin
       ];
 
       width.fraction = 0.3;
@@ -23,14 +22,14 @@
       closeOnClick = true;
     };
 
-    # custom css for anyrun, based on catppuccin-mocha
+    # custom css for anyrun, based on Kanagawa
     extraCss = ''
-      @define-color bg-col  rgba(30, 30, 46, 0.7);
+      @define-color bg-col  #1F1F28;
       @define-color bg-col-light rgba(150, 220, 235, 0.7);
       @define-color border-col rgba(30, 30, 46, 0.7);
-      @define-color selected-col rgba(150, 205, 251, 0.7);
-      @define-color fg-col #D9E0EE;
-      @define-color fg-col2 #F28FAD;
+      @define-color selected-col #C8C093;
+      @define-color fg-col #DCD7BA;
+      @define-color fg-col2 #C8C093;
 
       * {
         transition: 200ms ease;

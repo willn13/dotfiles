@@ -6,6 +6,7 @@
 	 
 	 	./sddm-theming.nix
 		./postgres.nix
+		#./mysql.nix
     ];
 
 }

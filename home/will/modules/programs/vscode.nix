@@ -6,30 +6,33 @@
   ...
 }: let
   marketplace-extensions = with inputs.nix-vscode-extensions.extensions.${pkgs.system}.vscode-marketplace; [
+    visualstudioexptteam.vscodeintellicode
     qufiwefefwoyn.kanagawa
-    johnnymorganz.stylua
     ms-python.black-formatter
     cweijan.vscode-mysql-client2
+    johnnymorganz.stylua
+    moocfi.test-my-code
   ];
 in {
   programs.vscode = {
     enable = true;
+    package = pkgs.vscodium;
     mutableExtensionsDir = true;
     extensions = with pkgs.vscode-extensions;
       [
         esbenp.prettier-vscode
         christian-kohler.path-intellisense
-        jnoortheen.nix-ide
+        bbenoist.nix
+        jdinhlife.gruvbox
         file-icons.file-icons
         kamadorueda.alejandra
+        sumneko.lua
         ms-python.python
         ms-python.vscode-pylance
         ms-toolsai.jupyter
         ms-toolsai.jupyter-renderers
-        sumneko.lua
         mkhl.direnv
         asvetliakov.vscode-neovim
-        angular.ng-template
       ]
       ++ marketplace-extensions;
 
@@ -49,15 +52,16 @@ in {
         defaultFormatter = "ms-python.black-formatter";
         formatOnType = true;
       };
+
       editor = {
         cursorBlinking = "smooth";
-        cursorStyle = "line";
+        cursorStyle = "block";
         cursorSmoothCaretAnimation = "on";
         cursorWidth = 2;
         editor.lineHeight = 20;
         fontLigatures = true;
         find.addExtraSpaceOnTop = false;
-        fontFamily = "'monospace', monospace";
+        fontFamily = "'Maple Mono NF', monospace";
         # fontSize = 13;
         formatOnSave = true;
         inlayHints.enabled = "off";
@@ -99,19 +103,9 @@ in {
       };
 
       files = {
-        autoSave = "afterDelay";
         eol = "\n";
         insertFinalNewline = true;
         trimTrailingWhitespace = true;
-
-        exclude = {
-          "**/.classpath" = true;
-          "**/.direnv" = true;
-          "**/.factorypath" = true;
-          "**/.git" = true;
-          "**/.project" = true;
-          "**/.settings" = true;
-        };
       };
 
       git = {

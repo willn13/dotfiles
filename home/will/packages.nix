@@ -12,15 +12,15 @@
       wezterm
       kitty
       tmux
-      zellij
       ueberzug
       tk
       yad
 
       # Editors
-      neovim
       neovide
       beekeeper-studio
+      sublime4
+      polkit_gnome
 
       #CLI Tools
       btop
@@ -35,6 +35,9 @@
       hello
       lazygit
       gdu
+      tldr
+      wlsunset
+      quickemu
       #xss-lock
       #xautolock
 
@@ -46,58 +49,70 @@
       picard
 
       # Browsers
-      vivaldi
       brave
+      vivaldi
       librewolf
 
-      # Office
-      zathura
+      # Office, Reading and Notetaking
       libreoffice-fresh
       pdfarranger
       okular
+      calibre
+      obsidian
+      logseq
+      notion-app-enhanced
+      foliate
+
+      # File Managers
+      pcmanfm
+      lxmenu-data # Show list of installed apps when using PCManFM
+      shared-mime-info # Recognize different file types in PCManFM
+
 
       #Apps
       bitwarden
       qbittorrent
       zoom-us
       mullvad-vpn
-      pcmanfm
       tdesktop # Telegram Desktop
       thunderbird-bin
       obs-studio
-      gimp
-      slack
-      lf
       ArchiSteamFarm
-      notion-app-enhanced
-      obsidian
-      figma-linux
-      inkscape
       flameshot
-      logseq
+      slack
+      caffeine-ng
+
+      # Design
+      gimp
+      inkscape
+      #figma-linux
 
       # Visual
       lxappearance
       variety
       betterlockscreen
-     
+      font-manager
+
 
       ;
 
+      # Gnome Packages
       inherit
         (pkgs.gnome)
-        gnome-tweaks
+        # gnome-tweaks
+        gucharmap
+        gnome-calendar
         ;
 
-     inherit
-        (pkgs.gnomeExtensions)
-        supergfxctl-gex
-        user-themes
-        tiling-assistant
-        awesome-tiles
-        just-perfection
-        forge
-        kimpanel
-        ;
+    #  inherit
+    #     (pkgs.gnomeExtensions)
+    #     supergfxctl-gex
+    #     user-themes
+    #     tiling-assistant
+    #     awesome-tiles
+    #     just-perfection
+    #     forge
+    #     kimpanel
+    #     ;
   };
 }

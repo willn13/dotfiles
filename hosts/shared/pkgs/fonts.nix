@@ -15,6 +15,10 @@
         noto-fonts-emoji
         noto-fonts
         noto-fonts-cjk
+        inter
+        ibm-plex
+        tabler-icons
+        material-design-icons
         ;
       nerdfonts = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
     };

@@ -136,7 +136,6 @@ in {
         maim
         lxrandr
         nemo-qml-plugin-dbus
-        redshift
         sox
         xclip
         xdotool

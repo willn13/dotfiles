@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let inherit (config.colorscheme) colors;
 in {
   programs.zathura = {
@@ -34,4 +34,5 @@ in {
        recolor = true;
     };
   };
+  nixpkgs.config.zathura.useMupdf = false; # Use the Poppler backend for viewing
 }

@@ -35,6 +35,10 @@
     ./modules/programs/zellij.nix
     # Btop
     ./modules/programs/btop.nix
+    # Redshift
+    ./modules/programs/redshift.nix
+    # Gammastep
+    ./modules/programs/gammastep.nix
     # Nvim Config
     ./modules/programs/nvim
     # Alacritty
@@ -49,6 +53,8 @@
     ./modules/programs/zathura.nix
     # LF
     ./modules/programs/lf.nix
+    # Spotify
+    ./modules/programs/spotify.nix
 
     # Wezterm
     (import ./modules/programs/wezterm {inherit builtins;})
